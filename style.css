@@ -14,13 +14,14 @@ header{
 
 .header-container{
     margin: 0 auto;
-    padding: 1.4rem 2rem;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
     max-width: 1100px;
 }
 
 .logo{
+    padding: 1rem;
     font-family: 'Sora', sans-serif;
     color: whitesmoke;
     font-size: 1.2rem;
@@ -36,10 +37,17 @@ header{
 }
 
 .btt-settings{
+    padding: 1rem;
     color: whitesmoke;
     background-color: transparent;
+    cursor: pointer;
+    border-radius: 5rem;
+    transition: background .3s;
 }
 
+.btt-settings:hover{
+    background-color: #2060ce;
+}
 .title-container{
     padding: 1rem 2rem;
     background-color: rgb(249, 249, 249);
@@ -91,8 +99,8 @@ footer > nav > button{
     width: 100%;
     max-width: 180px;
     min-width: 130px;
-    padding: 1rem;
-    border-radius: 15px;
+    padding: 1.2rem 1rem;
+    border-radius: 20px;
     background-color: #05cf05;
     color: whitesmoke;
     cursor: pointer;
@@ -108,6 +116,6 @@ footer > nav > button > i{
 footer > nav > button > span{
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
-    font-weight: 400;
-    letter-spacing: 0.2px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
