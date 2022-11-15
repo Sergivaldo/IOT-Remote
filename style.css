@@ -24,7 +24,7 @@ header{
     padding: 1rem;
     font-family: 'Sora', sans-serif;
     color: whitesmoke;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
@@ -61,7 +61,7 @@ header{
 
 .title-container > div > span{
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 500;
     letter-spacing: 0.2px;
     color: rgb(90, 90, 90);
@@ -115,7 +115,7 @@ footer > nav > button > i{
 }
 footer > nav > button > span{
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 500;
     letter-spacing: 0.3px;
 }
