@@ -14,9 +14,11 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;500&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600:700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://unpkg.com/paho-mqtt@1.0.4/paho-mqtt.js" type="text/javascript" defer ></script>
     <script src="script.js" defer></script>
+    <script src="mqtt.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,6 +32,48 @@
         </button>
       </div>
     </header>
+    <aside>
+      <span>MENU</span>
+      <nav class="menu">
+        <ul>
+          <li class="menu-item-default menu-item-default--transition"><i class="fa-regular fa-eye"></i>Monitorar</li>
+          <li class="menu-item-default menu-item-default--transition"><i class="fa-solid fa-clock-rotate-left"></i>Histórico</li>
+          <li class="menu-item-default menu-item-default--transition"><i class="fa-solid fa-screwdriver"></i>Ajustes</li>
+        </ul>
+      </nav >
+      <span class="subtitle">OUTROS</span>
+      <nav class="menu">
+        <ul>
+          <li class="led-button-item menu-item-default">
+            <div>
+              <i class="fa-solid fa-lightbulb led-icon"></i>
+              <span>Led - NODEMCU</span>
+            </div>
+            <label class="switch">
+              <input id="switch-led" type="checkbox" disabled>
+              <span class="slider round"></span>
+            </label>
+          </li>
+        </ul>
+      </nav>
+      <span class="subtitle">STATUS DAS CONEXÕES</span>
+      <nav class="menu">
+        <ul>
+          <li class="status-item menu-item-default">
+            <div>
+              <i id="broker-indicator" class="fa-solid fa-circle disconnected"></i>
+              <span>BROKER</span>
+            </div>
+          </li>
+          <li class="status-item menu-item-default">
+            <div>
+              <i id="node-indicator" class="fa-solid fa-circle disconnected"></i>
+              <span>NODEMCU</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </aside>
     <main>
       <section>
         <div class="title-container">
