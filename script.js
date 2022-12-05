@@ -9,10 +9,9 @@ Chart.defaults.color = '#8c8c8c';
 new Chart(ctx, {
 type: 'line',
 data: {
-    labels: ['0', '10h','10:30h','11:00h'],
+    labels: ['HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS',],
     datasets: [{
-    label:"a",
-    data: [0,1,0,1],
+    data: [0,1,0,1,1,1,1,0,0,0],
     borderWidth: 1,
     backgroundColor:'#FF6F00',
     borderColor: '#FF6F00',
@@ -45,28 +44,36 @@ options: {
 new Chart(ctx2, {
     type: 'line',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS','HH:MM:SS',],
         datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        label:"a",
+        data: [0,1,0,0,1,1,1,0,0,0],
         borderWidth: 1,
         backgroundColor:'#3F51B5',
         borderColor: '#3F51B5'
         }]
     },
     options: {
+        plugins: {
+            legend:false
+        },
         scales: {
         y: {
             beginAtZero: true
-        }
         },
-        legend:{
-            labels:{
-                color:"white",
+    
+        },
+        layout:{
+            padding:{
+                left:20,
+                right:20,
+                top:30,
+                bottom:10,
+                
             }
         },
         responsive:true,
         maintainAspectRatio:false
     }
-});
-
+    });
+    

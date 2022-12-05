@@ -14,7 +14,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600:700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600:700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="https://unpkg.com/paho-mqtt@1.0.4/paho-mqtt.js" type="text/javascript" defer ></script>
     <script src="script.js" defer></script>
@@ -36,8 +36,8 @@
       <span>MENU</span>
       <nav class="menu">
         <ul>
-          <li onclick="location.href='monitor.html'" class="menu-item-default menu-item-default--transition cursor"><i class="fa-regular fa-eye"></i>Monitorar</li>
-          <li onclick="location.href='index.html'" class="menu-item-default menu-item-default--transition active cursor"><i class="fa-solid fa-clock-rotate-left"></i>Histórico</li>
+          <li onclick="location.href='monitor.html'" class="menu-item-default menu-item-default--transition cursor active"><i class="fa-regular fa-eye"></i>Monitorar</li>
+          <li onclick="location.href='index.html'" class="menu-item-default menu-item-default--transition  cursor"><i class="fa-solid fa-clock-rotate-left"></i>Histórico</li>
         </ul>
       </nav >
       <span class="subtitle">AJUSTES</span>
@@ -101,23 +101,78 @@
     </aside>
     <main>
       <section>
-        <div class="title-container">
-          <div>
-            <span>Sensores Digitais</span>
+        <div>
+          <div class="title-container">
+            <div>
+              <span >Sensores Digitais</span>
+            </div>
+          </div>
+          <div class="sensors-container">
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
           </div>
         </div>
-        <div class="chart-container">
-          <canvas id="myChart" ></canvas>
-        </div>
-      </section>
-      <section>
-        <div class="title-container">
-          <div>
-            <span>Sensores Analógicos</span>
+        <div>
+          <div class="title-container">
+            <div>
+              <span >Sensores Analógicos</span>
+            </div>
           </div>
-        </div>
-        <div class="chart-container">
-          <canvas id="myChart2" ></canvas>
+          <div class="sensors-container">
+            <div class="sensor-container">
+              <span>Sensor A0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor A0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor A0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor A0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
