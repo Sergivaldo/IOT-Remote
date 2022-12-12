@@ -3,22 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>IOT Remote</title>
+    <link rel="stylesheet" href="resources/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600:700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-    <script src="https://unpkg.com/paho-mqtt@1.0.4/paho-mqtt.js" type="text/javascript" defer ></script>
-    <script src="script.js" defer></script>
-    <script src="mqtt.js" defer></script>
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600:700&family=Sora:wght@600&display=swap" rel="stylesheet"/>
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/mqtt.js" defer></script>
+    <script src="scripts/paho-mqtt.js"></script>
+    <script src="scripts/chart.js"></script>
   </head>
   <body>
     <header>
@@ -36,33 +31,61 @@
       <span>MENU</span>
       <nav class="menu">
         <ul>
-          <li onclick="location.href='monitor.html'" class="menu-item-default menu-item-default--transition cursor"><i class="fa-regular fa-eye"></i>Monitorar</li>
-          <li onclick="location.href='index.html'" class="menu-item-default menu-item-default--transition active cursor"><i class="fa-solid fa-clock-rotate-left"></i>Histórico</li>
+          <li
+            onclick="location.href='./pages/monitor.html'"
+            class="menu-item-default menu-item-default--transition cursor"
+          >
+            <i class="fa-regular fa-eye"></i>Monitorar
+          </li>
+          <li
+            onclick="location.href='index.html'"
+            class="menu-item-default menu-item-default--transition active cursor"
+          >
+            <i class="fa-solid fa-clock-rotate-left"></i>Histórico
+          </li>
         </ul>
-      </nav >
+      </nav>
       <span class="subtitle">AJUSTES</span>
       <nav class="menu">
         <ul>
           <li class="menu-item-default interval-container">
             <span>Intervalo de tempo</span>
-            <input id="interval" type="range" min="1" max="100" value="50">
+            <input id="interval" type="range" min="1" max="100" value="50" />
           </li>
           <li class="menu-item-default interval-container">
             <span>Unidade de tempo</span>
             <div class="radio-group">
               <div class="cursor">
-                <input class="radio" type="radio" id="html" name="fav_language" value="HTML">
+                <input
+                  class="radio"
+                  type="radio"
+                  id="html"
+                  name="fav_language"
+                  value="HTML"
+                />
                 <label class="cursor" for="html">SEG</label>
               </div>
               <div class="cursor">
-                <input class="radio" type="radio" id="css" name="fav_language" value="CSS">
-                <label class="cursor"  for="css">MIN</label>
+                <input
+                  class="radio"
+                  type="radio"
+                  id="css"
+                  name="fav_language"
+                  value="CSS"
+                />
+                <label class="cursor" for="css">MIN</label>
               </div>
               <div>
-                <input class="radio" type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <input
+                  class="radio"
+                  type="radio"
+                  id="javascript"
+                  name="fav_language"
+                  value="JavaScript"
+                />
                 <label class="cursor" for="javascript">HR</label>
               </div>
-            </div>  
+            </div>
           </li>
         </ul>
       </nav>
@@ -75,7 +98,7 @@
               <span>Led - NODEMCU</span>
             </div>
             <label class="switch">
-              <input id="switch-led" type="checkbox" disabled>
+              <input id="switch-led" type="checkbox" disabled />
               <span class="slider round"></span>
             </label>
           </li>
@@ -86,13 +109,19 @@
         <ul>
           <li class="status-item menu-item-default">
             <div>
-              <i id="broker-indicator" class="fa-solid fa-circle disconnected"></i>
+              <i
+                id="broker-indicator"
+                class="fa-solid fa-circle disconnected"
+              ></i>
               <span>BROKER</span>
             </div>
           </li>
           <li class="status-item menu-item-default">
             <div>
-              <i id="node-indicator" class="fa-solid fa-circle disconnected"></i>
+              <i
+                id="node-indicator"
+                class="fa-solid fa-circle disconnected"
+              ></i>
               <span>NODEMCU</span>
             </div>
           </li>
@@ -107,7 +136,7 @@
           </div>
         </div>
         <div class="chart-container">
-          <canvas id="myChart" ></canvas>
+          <canvas id="digital-chart"></canvas>
         </div>
       </section>
       <section>
@@ -117,7 +146,7 @@
           </div>
         </div>
         <div class="chart-container">
-          <canvas id="myChart2" ></canvas>
+          <canvas id="analog-chart"></canvas>
         </div>
       </section>
     </main>

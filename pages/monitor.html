@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOT Remote</title>
+    <link rel="stylesheet" href="../resources/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+     <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600:700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="../scripts/paho-mqtt.js"></script>
+    <script src="../scripts/mqtt.js" defer></script>
+    <script src="../scripts/monitor.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <i class="fa-solid fa-wifi"></i>
+          <span>IOT Remote</span>
+        </div>
+        <button class="btt-settings">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+    </header>
+    <aside>
+      <span>MENU</span>
+      <nav class="menu">
+        <ul>
+          <li onclick="location.href='monitor.html'" class="menu-item-default menu-item-default--transition cursor active"><i class="fa-regular fa-eye"></i>Monitorar</li>
+          <li onclick="location.href='../index.html'" class="menu-item-default menu-item-default--transition  cursor"><i class="fa-solid fa-clock-rotate-left"></i>Histórico</li>
+        </ul>
+      </nav >
+      <span class="subtitle">AJUSTES</span>
+      <nav class="menu">
+        <ul>
+          <li class="menu-item-default interval-container">
+            <span>Intervalo de tempo</span>
+            <input id="interval" type="range" min="1" max="100" value="50">
+          </li>
+          <li class="menu-item-default interval-container">
+            <span>Unidade de tempo</span>
+            <div class="radio-group">
+              <div class="cursor">
+                <input class="radio" type="radio" id="html" name="fav_language" value="HTML">
+                <label class="cursor" for="html">SEG</label>
+              </div>
+              <div class="cursor">
+                <input class="radio" type="radio" id="css" name="fav_language" value="CSS">
+                <label class="cursor"  for="css">MIN</label>
+              </div>
+              <div>
+                <input class="radio" type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label class="cursor" for="javascript">HR</label>
+              </div>
+            </div>  
+          </li>
+        </ul>
+      </nav>
+      <span class="subtitle">OUTROS</span>
+      <nav class="menu">
+        <ul>
+          <li class="led-button-item menu-item-default cursor">
+            <div>
+              <i class="fa-solid fa-lightbulb led-icon"></i>
+              <span>Led - NODEMCU</span>
+            </div>
+            <label class="switch">
+              <input id="switch-led" type="checkbox" disabled>
+              <span class="slider round"></span>
+            </label>
+          </li>
+        </ul>
+      </nav>
+      <span class="subtitle">STATUS DAS CONEXÕES</span>
+      <nav class="menu">
+        <ul>
+          <li class="status-item menu-item-default">
+            <div>
+              <i id="broker-indicator" class="fa-solid fa-circle disconnected"></i>
+              <span>BROKER</span>
+            </div>
+          </li>
+          <li class="status-item menu-item-default">
+            <div>
+              <i id="node-indicator" class="fa-solid fa-circle disconnected"></i>
+              <span>NODEMCU</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <section>
+        <div>
+          <div class="title-container">
+            <div>
+              <span >Sensores Digitais</span>
+            </div>
+          </div>
+          <div class="sensors-container">
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor D0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="title-container">
+            <div>
+              <span >Sensores Analógicos</span>
+            </div>
+          </div>
+          <div class="sensors-container">
+            <div class="sensor-container">
+              <span>Sensor A0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor A0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor A0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+            <div class="sensor-container">
+              <span>Sensor A0</span>
+              <span>Valor: </span>
+              <span>DESATIVADO</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <nav>
+        <button>
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Monitorar</span>
+        </button>
+        <button>
+          <i class="fa-solid fa-screwdriver"></i>
+          <span>Ajustar</span>
+        </button>
+      </nav>
+    </footer>
+  </body>
+</html>
