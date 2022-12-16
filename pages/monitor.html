@@ -21,7 +21,7 @@
           <i class="fa-solid fa-wifi"></i>
           <span>IOT Remote</span>
         </div>
-        <button class="btt-settings">
+        <button class="btt-settings" id="settings">
           <i class="fa-solid fa-gear"></i>
         </button>
       </div>
@@ -30,33 +30,74 @@
       <span>MENU</span>
       <nav class="menu">
         <ul>
-          <li onclick="location.href='monitor.html'" class="menu-item-default menu-item-default--transition cursor active"><i class="fa-regular fa-eye"></i>Monitorar</li>
-          <li onclick="location.href='../index.html'" class="menu-item-default menu-item-default--transition  cursor"><i class="fa-solid fa-clock-rotate-left"></i>Histórico</li>
+          <li
+            onclick="location.href='./pages/monitor.html'"
+            class="menu-item-default menu-item-default--transition active cursor"
+          >
+            <i class="fa-regular fa-eye"></i>Monitorar
+          </li>
+          <li
+            onclick="location.href='../index.html'"
+            class="menu-item-default menu-item-default--transition  cursor"
+          >
+            <i class="fa-solid fa-clock-rotate-left"></i>Histórico
+          </li>
         </ul>
-      </nav >
+      </nav>
       <span class="subtitle">AJUSTES</span>
       <nav class="menu">
         <ul>
           <li class="menu-item-default interval-container">
             <span>Intervalo de tempo</span>
-            <input id="interval" type="range" min="1" max="100" value="50">
+            <div>
+              <span>1</span>
+              
+              <input id="interval" type="range" min="1" max="10" value="5" />
+              <span>10</span>
+            </div>
+            
           </li>
           <li class="menu-item-default interval-container">
             <span>Unidade de tempo</span>
             <div class="radio-group">
               <div class="cursor">
-                <input class="radio" type="radio" id="html" name="fav_language" value="HTML">
+                <input
+                  class="radio"
+                  type="radio"
+                  id="html"
+                  name="fav_language"
+                  value="HTML"
+                />
                 <label class="cursor" for="html">SEG</label>
               </div>
               <div class="cursor">
-                <input class="radio" type="radio" id="css" name="fav_language" value="CSS">
-                <label class="cursor"  for="css">MIN</label>
+                <input
+                  class="radio"
+                  type="radio"
+                  id="css"
+                  name="fav_language"
+                  value="CSS"
+                />
+                <label class="cursor" for="css">MIN</label>
               </div>
               <div>
-                <input class="radio" type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <input
+                  class="radio"
+                  type="radio"
+                  id="javascript"
+                  name="fav_language"
+                  value="JavaScript"
+                />
                 <label class="cursor" for="javascript">HR</label>
               </div>
-            </div>  
+            </div>
+            
+          </li>
+          <li class="menu-item-default">
+            <button class="send-button">
+              <span>Enviar</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
           </li>
         </ul>
       </nav>
@@ -69,7 +110,7 @@
               <span>Led - NODEMCU</span>
             </div>
             <label class="switch">
-              <input id="switch-led" type="checkbox" disabled>
+              <input id="switch-led" type="checkbox" disabled />
               <span class="slider round"></span>
             </label>
           </li>
@@ -80,13 +121,19 @@
         <ul>
           <li class="status-item menu-item-default">
             <div>
-              <i id="broker-indicator" class="fa-solid fa-circle disconnected"></i>
+              <i
+                id="broker-indicator"
+                class="fa-solid fa-circle disconnected"
+              ></i>
               <span>BROKER</span>
             </div>
           </li>
           <li class="status-item menu-item-default">
             <div>
-              <i id="node-indicator" class="fa-solid fa-circle disconnected"></i>
+              <i
+                id="node-indicator"
+                class="fa-solid fa-circle disconnected"
+              ></i>
               <span>NODEMCU</span>
             </div>
           </li>
@@ -170,17 +217,68 @@
         </div>
       </section>
     </main>
-    <footer>
-      <nav>
-        <button>
-          <i class="fa-solid fa-chart-line"></i>
-          <span>Monitorar</span>
-        </button>
-        <button>
-          <i class="fa-solid fa-screwdriver"></i>
-          <span>Ajustar</span>
-        </button>
-      </nav>
-    </footer>
+    <div id="modal">
+      <div id="content-modal">
+        <span>Especificar Sensores Ativos</span>
+        <ul class="list-active-sensors">
+          <li class="active-sensors-item">
+            <span>Sensor D0</span>
+            <label class="switch">
+              <input id="switch-d0" type="checkbox" disabled />
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <li class="active-sensors-item">
+            <span>Sensor D1</span>
+            <label class="switch">
+              <input id="switch-d1" type="checkbox" disabled />
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <li class="active-sensors-item">
+            <span>Sensor D2</span>
+            <label class="switch">
+              <input id="switch-d2" type="checkbox" disabled />
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <li class="active-sensors-item">
+            <span>Sensor D3</span>
+            <label class="switch">
+              <input id="switch-d3" type="checkbox" disabled />
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <li class="active-sensors-item">
+            <span>Sensor D4</span>
+            <label class="switch">
+              <input id="switch-d4" type="checkbox" disabled />
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <li class="active-sensors-item">
+            <span>Sensor D5</span>
+            <label class="switch">
+              <input id="switch-d5" type="checkbox" disabled />
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <li class="active-sensors-item">
+            <span>Sensor D6</span>
+            <label class="switch">
+              <input id="switch-d6" type="checkbox" disabled />
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <li class="active-sensors-item">
+            <span>Sensor D7</span>
+            <label class="switch">
+              <input id="switch-d7" type="checkbox" disabled />
+              <span class="slider round"></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

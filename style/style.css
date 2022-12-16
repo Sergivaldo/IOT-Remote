@@ -70,6 +70,7 @@ padding: 0rem 1.2rem;
 }
 
 main{
+    margin: 2rem;
     padding: 3rem;
     grid-area: main;
     background-color: #1F2029;
@@ -101,7 +102,7 @@ main{
 }
 
 aside{
-    padding: 2.4rem 4rem;
+    padding: 3rem 4rem;
     grid-area: aside;
     font-family: 'Open Sans', sans-serif;
 }
@@ -119,8 +120,8 @@ aside > span{
 }
 .menu{
     margin-left: 0.3rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .menu-item-default{
@@ -163,6 +164,16 @@ aside > span{
     margin-bottom: 1rem;
 }
 
+.interval-container:nth-child(1) > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+
+
 .interval-container > span{
     display: block;
     text-align: center;
@@ -173,12 +184,15 @@ aside > span{
     color: rgb(163, 162, 162);
 }
 
+
+
 #interval{
     width: 100%;
     height: 4px;
 }
 
 .radio-group{
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -193,6 +207,21 @@ aside > span{
     letter-spacing: 1.5px;
     border-radius: 0.5rem;
     border: 2px solid rgba(157, 180, 255, 0.164);
+}
+
+.send-button{
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgba(157, 180, 255, 0.164);;
+    color: whitesmoke;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.interval-container > button > span{
+    margin-right: 0.5rem;
 }
 
 .radio{
@@ -224,63 +253,61 @@ aside > span{
     height: 20px;
 }
   
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 12px;
-    width: 12px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(10px);
-    -ms-transform: translateX(10px);
-    transform: translateX(10px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+/* Hide default HTML checkbox */
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 12px;
+width: 12px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(10px);
+-ms-transform: translateX(10px);
+transform: translateX(10px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
 
 .status-item{
+    padding: 5px;
     background-color: #23242e;
+    font-size: 1.2rem;
 }
 
 .status-item:nth-child(1){
@@ -342,47 +369,56 @@ aside > span{
     color:rgb(129, 129, 129);
 }
 
-footer{
-    display: none;
-    width: 100vw;
+#modal{
+    visibility: hidden;
     position: fixed;
-    bottom: 0;
-}
-
-footer > nav{
-    padding: 1.4rem 2rem;
-    margin: 0 auto;
-    max-width: 1100px;
+    top: 60px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    justify-content: flex-end;
+    background-color: rgba(0,0,0,0.3);
+
+}
+#content-modal{
+    margin-right: 20px;
+    padding: 30px;
+    width: 150px;
+    height: 250px;
+    background-color: #1f232c;
+    border-radius: 10px;
+    font-family: 'Open Sans',sans-serif;
 }
 
-footer > nav > button{
+#content-modal > span{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.list-active-sensors{
     width: 100%;
-    max-width: 180px;
-    min-width: 130px;
-    padding: 1.2rem 1rem;
-    border-radius: 20px;
-    background-color: #05cf05;
-    color: whitesmoke;
-    cursor: pointer;
-    transition: filter .2s;
+    margin-top: 1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
-footer > nav > button:hover{
-    filter: brightness(0.9);
+.active-sensors-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
-footer > nav > button > i{
-    margin-right: 5px;
+
+#modal.active{
+    visibility: visible;
 }
-footer > nav > button > span{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
+
 
 /* Animações*/
 

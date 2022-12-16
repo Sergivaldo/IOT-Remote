@@ -1,5 +1,8 @@
 const ctx = document.getElementById("digital-chart");
 const ctx2 = document.getElementById("analog-chart");
+const modal = document.getElementById("modal");
+
+
 Chart.defaults.color = "#8c8c8c";
 
 new Chart(ctx, {

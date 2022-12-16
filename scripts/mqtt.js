@@ -1,16 +1,23 @@
-const RASP_RESPONSE = "tp04/g03/mqtt/response/rasp/value";
-const RASP_REQUEST = "tp04/g03/mqtt/request/rasp/value";
-const APP_RESPONSE = "tp04/g03/mqtt/response/app/value";
+const RASP_RESPONSE = "tp04/g03/mqtt/response/rasp/value"
+const RASP_REQUEST = "tp04/g03/mqtt/request/rasp/value"
+const APP_RESPONSE = "tp04/g03/mqtt/response/app/value"
+const APP_HISTORY = "tp04/g03/app/history"
 
-const ledIcon = document.querySelector(".led-icon");
-const switchLed = document.querySelector(".led-button-item");
-const checkboxLed = document.getElementById("switch-led");
-const nodeIndicator = document.getElementById("node-indicator");
-const brokerIndicator = document.getElementById("broker-indicator");
+const ledIcon = document.querySelector(".led-icon")
+const switchLed = document.querySelector(".led-button-item")
+const checkboxLed = document.getElementById("switch-led")
+const nodeIndicator = document.getElementById("node-indicator")
+const brokerIndicator = document.getElementById("broker-indicator")
 
 let brokerIsConnected = false;
 let nodeIsConnected = false;
 let nextStateLed = false;
+
+const btt_settings = document.getElementById("settings");
+
+btt_settings.addEventListener("click", () => {
+  modal.classList.toggle("active");
+});
 
 switchLed.addEventListener("click", () => {
   if (brokerIsConnected && nodeIsConnected) {
@@ -54,6 +61,7 @@ function onConnect() {
   console.log("Conexão estabelecida");
   client.subscribe(RASP_REQUEST);
   client.subscribe(RASP_RESPONSE);
+  client.subscribe(APP_HISTORY);
   brokerIsConnected = true;
   setConnectionStatus(brokerIndicator, brokerIsConnected);
 }
